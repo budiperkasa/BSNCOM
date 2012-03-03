@@ -1,0 +1,1 @@
+DROP TABLE `search_fields_groups`, `search_fields_to_groups`, `search_fields_type_email`, `search_fields_type_price`, `search_fields_type_price_options`, `search_fields_type_richtext`, `search_fields_type_text`, `search_fields_type_varchar`, `search_fields_type_varchar_options`, `search_fields_type_website`;

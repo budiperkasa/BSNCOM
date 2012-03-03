@@ -1,0 +1,21 @@
+.jstree ins {
+		vertical-align: top !important;
+		height: auto !important;
+}
+.jstree a {
+		width: 160px !important;
+		white-space: normal !important;
+		height: auto !important;
+}
+.jstree li {
+		/*white-space: normal !important;*/
+}
+.jstree li a ins {
+		float: left;
+}
+.jstree li a span {
+		display: block;
+}
+/*.jstree li a ins {
+		display: none;
+}*/

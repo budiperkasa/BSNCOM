@@ -1,0 +1,1 @@
+INSERT INTO `system_settings` SET `name`='W2D_VERSION', `value`='2.4.3' ON DUPLICATE KEY UPDATE `value`='2.4.3';
