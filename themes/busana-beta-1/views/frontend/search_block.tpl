@@ -297,7 +297,7 @@
                      		{if $advanced_search_fields->fieldsCount() || $content_access_obj->isPermission('Manage all listings')}
                      		<div class="search_filter_advanced">
 	                     		<div id="advanced_search_button">
-	                     			<a href="javascript: void(0);" class="toggle advanced_search"><img src="{$public_path}images/icons/add.png"></a> <a href="javascript: void(0);" class="toggle advanced_search">{$LANG_ADVANCED_SEARCH}</a>
+	                     			<a href="{$VH->site_url("search/")}">{$LANG_FULL_DIRECTORY}</a>
 	                     		</div>
 	                     	</div>
 	                     	{/if}
