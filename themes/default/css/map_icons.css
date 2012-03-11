@@ -1,0 +1,42 @@
+h1, h2 {
+		font-size: 16px;
+		margin: 4px 0 0 4px;
+		text-align: left;
+		color: #FF6600
+}
+h2 {
+		font-size: 12px;
+		margin: 0 0 4px 4px;
+}
+.theme_name {
+		font-size: 14px;
+		color: black;
+		font-weight: bold;
+		padding-bottom: 4px;
+		text-align: center;
+}
+.theme_block {
+		padding: 8px;
+}
+.icon {
+		padding: 3px;
+		float: left;
+		background-color: white;
+		cursor: pointer;
+}
+.selected_icon {
+		background-color: #FCA057;
+}
+.icon:hover {
+		background-color: #EFEFEF;
+}
+.selected_icon:hover {
+		background-color: #FCA057;
+}
+#icons_array_changed {
+		visibility: hidden;
+}
+div.left_align {
+		text-align: left;
+		margin: 0 4px;
+}

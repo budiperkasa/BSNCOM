@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+	# Check if mod_rewrite module loaded and we can work with SEO urls
+	SetEnv HTTP_MOD_REWRITE On
+	
+	RewriteEngine on
+	
+	# When images from 'themes/' subfolders can not be found - look them in default theme
+	RewriteCond %{REQUEST_URI} \.(jpg|gif|png|ico)$ [NC]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^themes/([^/]+)/(.*)$ themes/default/$2 [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*\.js) combine.php?type=javascript&files=$1
+	
+	# To redirect all users to access the site WITH the 'www.' prefix,
+	# (http://example.com/... will be redirected to http://www.example.com/...)
+	# adapt and uncomment the following:
+	# RewriteCond %{HTTP_HOST} ^yoursite\.com$ [NC]
+	# RewriteRule ^(.*)$ http://www.yoursite.com/$1 [L,R=301]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !=/favicon.ico
+	#RewriteRule ^(.*)$ index.php/$1 [L]
+	RewriteRule ^(.*)$ ./index.php [L]
+</IfModule>
