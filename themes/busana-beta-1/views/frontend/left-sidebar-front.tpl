@@ -1,5 +1,0 @@
-
-<!-- LEFT SIDEBAR -->
-
-
-<!-- /LEFT SIDEBAR -->
