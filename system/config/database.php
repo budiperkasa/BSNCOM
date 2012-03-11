@@ -36,8 +36,8 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "ruslihas_busana";
-$db['default']['password'] = "busana123";
+$db['default']['username'] = "root";
+$db['default']['password'] = "";
 $db['default']['database'] = "ruslihas_busana";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = FALSE;

@@ -27,7 +27,12 @@
 | NOTE: if your site is not in subdirectory - leave it empty
 |
 */
-$config['base_url']	= "http://www.deploy.busana.com/";
+$indexPath=dirname(dirname(dirname(__FILE__)));
+$pathInfo=pathinfo($indexPath);
+$hostName=$_SERVER['HTTP_HOST'];
+$protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,5))=='https://'?'https://':'http://';
+
+$config['base_url']	= $protocol.$hostName.'/'.$pathInfo['basename'].'/';
 $config['subdirectory']	= "";
 
 
