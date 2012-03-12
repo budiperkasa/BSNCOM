@@ -5,7 +5,7 @@ class listingsView
 	public $type_id;
 	public $view;
 	public $format;
-	public $order_by = 'l.creation_date';
+	public $order_by = 'cf.ranking_alexa';
 	public $order_direction = 'desc';
 	public $levels_visible = array();
 	
