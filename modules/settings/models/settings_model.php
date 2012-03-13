@@ -413,5 +413,16 @@ class settingsModel extends Model
     	$this->db->reconnect();
     	// --------------------------------------------------------------------------------------------
     }
+	
+	public function getContentFieldSearchOrder()
+	{
+	  $this->db->select('name, seo_name');
+	  $this->db->from('content_fields');
+	  $this->db->where('v_search_page = 1');
+	  $query=$this->db->get();
+	  $rows=$query->result_array();
+	  return $rows;
+	  
+	}
 }
 ?>

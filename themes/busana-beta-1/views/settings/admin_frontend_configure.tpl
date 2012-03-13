@@ -49,7 +49,7 @@ $(document).ready(function() {ldelim}
                           <div class="admin_option_name">
                           	{$LANG_DEFAULT_LISTINGS_ORDER}<span class="red_asterisk">*</span>
                           </div>
-						  <label><input type="radio" name="order_by" value="cf.ranking_alexa" {if $listings_view->order_by == 'cf.ranking_alexa'} checked {/if} /> Alexa Ranking </label>
+						  {$customFieldOrder}
                           <label><input type="radio" name="order_by" value="l.creation_date" {if $listings_view->order_by == 'l.creation_date'} checked {/if} /> {$LANG_SEARCH_CREATION_DATE}</label>
                           <label><input type="radio" name="order_by" value="l.title" {if $listings_view->order_by == 'l.title'} checked {/if} /> {$LANG_SEARCH_LISTING_TITLE}</label>
                           <label><input type="radio" name="order_by" value="lev.order_num" {if $listings_view->order_by == 'lev.order_num'} checked {/if} /> {$LANG_SEARCH_INFO_VALUE}</label>

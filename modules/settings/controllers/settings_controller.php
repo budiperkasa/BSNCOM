@@ -204,7 +204,6 @@ class settingsController extends Controller
     	$types = $this->types->getTypesLevels();
     	
     	$views = $this->settings->selectViewsByTypes($types);
-
         $view  = $this->load->view();
         $view->assign('types', $types);
         $view->assign('views', $views);
@@ -219,7 +218,14 @@ class settingsController extends Controller
     	$type = $this->types->getTypeById($type_id);
     	$views = $this->settings->selectViewsByTypes($types);
     	$listings_view = $views->getViewByTypeIdAndPage($type_id, $page_key);
-
+		$customFieldOrder='';
+		$customFieldRows=$this->settings->getContentFieldSearchOrder();
+		foreach($customFieldRows as $key=>$row)
+		{
+		  $checkedOrder=$listings_view->order_by == 'cf.'.$row['seo_name']? 'checked':'';
+		  $checkedOrder=trim($checkedOrder);
+		  $customFieldOrder.="<label><input type='radio' name='order_by' value='cf.{$row['seo_name']}' {$checkedOrder} /> {$row['name']} </label>";
+		}
     	if ($this->input->post('submit')) {
     		$this->form_validation->set_rules('view', LANG_LISTING_VIEW_TH, 'required');
     		$this->form_validation->set_rules('format', LANG_LISTING_FORMAT, 'required');
@@ -252,7 +258,7 @@ class settingsController extends Controller
 		    	LANG_FRONTEND_SETTINGS_PAGE . ' "' . $listings_view->page_name . '"',
 		    ));
     	}
-
+		$view->assign('customFieldOrder',$customFieldOrder);
         $view->assign('type', $type);
         $view->assign('listings_view', $listings_view);
         $view->display('settings/admin_frontend_configure.tpl');
